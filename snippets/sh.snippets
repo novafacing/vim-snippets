@@ -10,7 +10,13 @@ snippet safe
 	set -euo pipefail
 
 snippet bash
-	#!/usr/bin/env bash
+	#!/bin/bash
+	
+snippet rcode
+	if [[ $? != - ]]; then
+		printf "%s\n" "${0:${VISUAL}}"
+		exit 1
+	fi
 
 snippet sbash
 	#!/usr/bin/env bash
